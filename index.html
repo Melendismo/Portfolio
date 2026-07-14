@@ -1,6 +1,3 @@
-
-Gemini es una IA y puede cometer errores, incluso sobre personas. Tu privacidad y GeminiSe abre en una ventana nueva
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -283,6 +280,142 @@ Gemini es una IA y puede cometer errores, incluso sobre personas. Tu privacidad 
             margin-bottom: 10px;
         }
 
+        /* Referencias & Media Grid */
+        .references-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (min-width: 678px) {
+            .references-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .ref-card {
+            background-color: var(--accent-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ref-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(140, 45, 25, 0.1);
+        }
+
+        .ref-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .ref-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ref-name {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin-bottom: 2px;
+        }
+
+        .ref-role {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .ref-quote {
+            font-size: 0.9rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .ref-contact-btn {
+            display: inline-block;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white);
+            background-color: var(--primary-color);
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+            margin-top: auto;
+        }
+
+        .ref-contact-btn:hover {
+            background-color: var(--dark-gray);
+        }
+
+        /* Gallery/Dishes of MU.NA */
+        .muna-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .muna-gallery {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 150px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            color: var(--white);
+            font-size: 0.75rem;
+            padding: 8px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
+        }
+
         /* Formation Block */
         .edu-block {
             margin-bottom: 25px;
@@ -429,21 +562,73 @@ Gemini es una IA y puede cometer errores, incluso sobre personas. Tu privacidad 
 
     <!-- 5. EXPERIENCE SECTION -->
     <section class="portfolio-section" id="experiencia" data-aos="fade-up" data-aos-duration="800">
-        <h2>Trayectoria Laboral</h2>
+        <h2>Trayectoria Laboral & Referencias</h2>
+        
         <div class="timeline">
-            
             <div class="timeline-node">
-                <p class="node-title">Chef de Partie (Partida de Calientes)</p>
-                <p class="node-meta">Restaurante El Olivo (1 Sol Repsol) | 2023 - Presente</p>
-                <p>Responsable directo del servicio caliente para una media de 90 comensales diarios. Dirección de 2 ayudantes, control diario riguroso de mermas y elaboración metódica de fichas de producción.</p>
+                <p class="node-title">Jefe de Cocina</p>
+                <p class="node-meta">Restaurante MU.NA (1 Estrella Michelin & 1 Sol Repsol) | Ponferrada | 2023 - Presente</p>
+                <p style="margin-bottom: 20px;">Liderazgo de la cocina mano a mano con el chef Samuel Naveira. Responsable de la ejecución del menú degustación de alta cocina contemporánea y fusión japonesa con producto de proximidad del Bierzo. Gestión de brigada, control de calidad, escandallos y preservación del estándar estrella Michelin.</p>
+                
+                <!-- Galería visual del Restaurante y Platos en MU.NA -->
+                <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">El Entorno y los Platos de MU.NA</p>
+                <div class="muna-gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=400" alt="Comedor Restaurante MU.NA">
+                        <div class="gallery-caption">El Comedor</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=400" alt="Bodega de MU.NA">
+                        <div class="gallery-caption">La Bodega</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=400" alt="Plato de Autor Fusión Japonesa">
+                        <div class="gallery-caption">Fusión Japonesa</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=400" alt="Producto del Bierzo y Mar">
+                        <div class="gallery-caption">Producto & Mar</div>
+                    </div>
+                </div>
+                
+                <!-- Referencias Directas de Líderes del MU.NA -->
+                <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-top: 35px; margin-bottom: 5px;">Referencias Profesionales de MU.NA</p>
+                <div class="references-grid">
+                    
+                    <!-- Tarjeta Samuel Naveira -->
+                    <div class="ref-card">
+                        <img class="ref-img" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400" alt="Samuel Naveira - Chef de MU.NA">
+                        <div class="ref-info">
+                            <div>
+                                <p class="ref-name">Samuel Naveira</p>
+                                <p class="ref-role">Chef Propietario / Estrella Michelin</p>
+                                <p class="ref-quote">"Carlos ha sido una pieza clave en nuestra cocina. Destaco su disciplina, rigor técnico en técnicas modernas y su capacidad para liderar pases de extrema presión manteniendo intactos nuestros estándares."</p>
+                            </div>
+                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Carlos%20Mendoza" class="ref-contact-btn">Solicitar Referencia de Samuel</a>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Dani Giganto -->
+                    <div class="ref-card">
+                        <img class="ref-img" src="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&q=80&w=400" alt="Dani Giganto - Sumiller de MU.NA">
+                        <div class="ref-info">
+                            <div>
+                                <p class="ref-name">Daniel Giganto</p>
+                                <p class="ref-role">Director de Sala y Mejor Sumiller de España</p>
+                                <p class="ref-quote">"La sintonía entre cocina y sala es vital en un estrella Michelin. Carlos entiende la armonía perfecta de los platos y trabaja en equipo con un nivel de profesionalidad sobresaliente."</p>
+                            </div>
+                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Carlos%20Mendoza%20(Dani%20Giganto)" class="ref-contact-btn">Solicitar Referencia de Dani</a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="timeline-node">
-                <p class="node-title">Cocinero de Primera</p>
-                <p class="node-meta">Hotel Wellington & Spa 5* | 2020 - 2023</p>
-                <p>Despliegue operativo en banquetes masivos, eventos institucionales y servicio a la carta. Gestión integral del cuarto frío y apoyo crítico en pase bajo exigentes estándares de rapidez de un 5 estrellas.</p>
+            <div class="timeline-node" style="margin-top: 40px;">
+                <p class="node-title">Cocinero de Primera (Jefe de Partida)</p>
+                <p class="node-meta">Hotel Wellington & Spa 5* | Madrid | 2020 - 2023</p>
+                <p>Despliegue operativo en banquetes de alta gama, eventos institucionales y servicio a la carta. Gestión integral del cuarto frío y apoyo crítico en pases de alta presión bajo estándares hoteleros de 5 estrellas.</p>
             </div>
-
         </div>
     </section>
 
