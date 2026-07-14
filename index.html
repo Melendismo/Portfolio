@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carlos Mendoza | Portafolio Gastronómico Profesional</title>
+    <title>Alfredo Talín | Portafolio Gastronómico Profesional</title>
     <!-- AOS Library CSS para animaciones al hacer scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
@@ -49,6 +49,27 @@
             background: linear-gradient(180deg, var(--white) 0%, var(--bg-color) 100%);
             border-bottom: 4px solid var(--primary-color);
             position: relative;
+        }
+
+        /* Contenedor de la Foto de Perfil (Tamaño carnet redondo) */
+        .profile-avatar-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 8px 20px rgba(140, 45, 25, 0.15);
+            background-color: var(--accent-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .hero h1 {
@@ -240,7 +261,7 @@
 
         .timeline-node {
             position: relative;
-            margin-bottom: 35px;
+            margin-bottom: 45px;
             transition: var(--transition-smooth);
             padding-left: 5px;
         }
@@ -487,17 +508,20 @@
 
     <!-- 1. PRESENTATION / HERO SECTION -->
     <section class="hero">
-        <h1 data-aos="fade-up" data-aos-duration="1000">Carlos Mendoza</h1>
-        <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Chef de Partie & Especialista en Cocina Mediterránea</p>
+        <div class="profile-avatar-container" data-aos="fade-up" data-aos-duration="1000">
+            <img class="profile-avatar" src="img/alfredo-talin.jpg" alt="Foto de Alfredo Talín">
+        </div>
+        <h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Alfredo Talín</h1>
+        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Chef de Partie & Especialista en Cocina Mediterránea</p>
         <div class="scroll-indicator">Haz scroll para ver el menú ↓</div>
     </section>
 
     <!-- Navigation Header Sticky -->
     <header>
         <div class="header-container">
-            <span class="header-logo">Carlos Mendoza | Portafolio</span>
+            <span class="header-logo">Alfredo Talín | Portafolio</span>
             <div class="contact-minimal">
-                📞 +34 600 000 000 &nbsp;|&nbsp; ✉️ <a href="mailto:carlos.mendoza.chef@email.com">carlos.mendoza.chef@email.com</a>
+                📞 +34 600 000 000 &nbsp;|&nbsp; ✉️ <a href="mailto:alfrepei@gmail.com">alfrepei@gmail.com</a>
             </div>
         </div>
     </header>
@@ -562,9 +586,17 @@
 
     <!-- 5. EXPERIENCE SECTION -->
     <section class="portfolio-section" id="experiencia" data-aos="fade-up" data-aos-duration="800">
-        <h2>Trayectoria Laboral & Referencias</h2>
+        <h2>Trayectoria Laboral & References</h2>
         
         <div class="timeline">
+            <!-- NUEVA EXPERIENCIA: Restaurante Marea -->
+            <div class="timeline-node">
+                <p class="node-title">Jefe de Partida / Cocinero</p>
+                <p class="node-meta">Restaurante Marea | Cariño, A Coruña | 2020 - 2023</p>
+                <p>Responsable del control del cuarto frío y pases calientes enfocado en la elaboración de cocina marinera de corte contemporáneo. Gestión directa de proveedores de lonja, limpieza y porcionado de pescados y mariscos salvajes del litoral gallego, garantizando los máximos estándares higiénico-sanitarios y un riguroso control de mermas.</p>
+            </div>
+
+            <!-- EXPERIENCIA: Restaurante MU.NA -->
             <div class="timeline-node">
                 <p class="node-title">Jefe de Cocina</p>
                 <p class="node-meta">Restaurante MU.NA (1 Estrella Michelin & 1 Sol Repsol) | Ponferrada | 2023 - Presente</p>
@@ -574,19 +606,19 @@
                 <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">El Entorno y los Platos de MU.NA</p>
                 <div class="muna-gallery">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=400" alt="Comedor Restaurante MU.NA">
+                        <img src="img/comedor-muna.jpg" alt="Comedor Restaurante MU.NA">
                         <div class="gallery-caption">El Comedor</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&q=80&w=400" alt="Bodega de MU.NA">
+                        <img src="img/bodega-muna.jpg" alt="La Bodega de MU.NA">
                         <div class="gallery-caption">La Bodega</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&q=80&w=400" alt="Plato de Autor Fusión Japonesa">
+                        <img src="img/plato-fusion.jpg" alt="Plato de Autor Fusión Japonesa">
                         <div class="gallery-caption">Fusión Japonesa</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=400" alt="Producto del Bierzo y Mar">
+                        <img src="img/plato-producto.jpg" alt="Producto del Bierzo y Mar">
                         <div class="gallery-caption">Producto & Mar</div>
                     </div>
                 </div>
@@ -597,37 +629,31 @@
                     
                     <!-- Tarjeta Samuel Naveira -->
                     <div class="ref-card">
-                        <img class="ref-img" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400" alt="Samuel Naveira - Chef de MU.NA">
+                        <img class="ref-img" src="img/samuel-naveira.jpg" alt="Samuel Naveira - Chef de MU.NA">
                         <div class="ref-info">
                             <div>
                                 <p class="ref-name">Samuel Naveira</p>
                                 <p class="ref-role">Chef Propietario / Estrella Michelin</p>
-                                <p class="ref-quote">"Carlos ha sido una pieza clave en nuestra cocina. Destaco su disciplina, rigor técnico en técnicas modernas y su capacidad para liderar pases de extrema presión manteniendo intactos nuestros estándares."</p>
+                                <p class="ref-quote">"Alfredo ha sido una pieza clave en nuestra cocina. Destaco su disciplina, rigor técnico en técnicas modernas y su capacidad para liderar pases de extrema presión manteniendo intactos nuestros estándares."</p>
                             </div>
-                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Carlos%20Mendoza" class="ref-contact-btn">Solicitar Referencia de Samuel</a>
+                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Alfredo%20Tal%C3%ADn" class="ref-contact-btn">Solicitar Referencia de Samuel</a>
                         </div>
                     </div>
 
                     <!-- Tarjeta Dani Giganto -->
                     <div class="ref-card">
-                        <img class="ref-img" src="https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&q=80&w=400" alt="Dani Giganto - Sumiller de MU.NA">
+                        <img class="ref-img" src="img/dani-giganto.jpg" alt="Dani Giganto - Sumiller de MU.NA">
                         <div class="ref-info">
                             <div>
                                 <p class="ref-name">Daniel Giganto</p>
-                                <p class="ref-role">Director de Sala y Mejor Sumiller de España</p>
-                                <p class="ref-quote">"La sintonía entre cocina y sala es vital en un estrella Michelin. Carlos entiende la armonía perfecta de los platos y trabaja en equipo con un nivel de profesionalidad sobresaliente."</p>
+                                <p class="ref-role">Director de Sala y Mejor Sumiller de España 2026</p>
+                                <p class="ref-quote">"La sintonía entre cocina y sala es vital en un estrella Michelin. Alfredo entiende la armonía perfecta de los platos y trabaja en equipo con un nivel de profesionalidad sobresaliente."</p>
                             </div>
-                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Carlos%20Mendoza%20(Dani%20Giganto)" class="ref-contact-btn">Solicitar Referencia de Dani</a>
+                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Alfredo%20Tal%C3%ADn%20(Dani%20Giganto)" class="ref-contact-btn">Solicitar Referencia de Dani</a>
                         </div>
                     </div>
 
                 </div>
-            </div>
-
-            <div class="timeline-node" style="margin-top: 40px;">
-                <p class="node-title">Cocinero de Primera (Jefe de Partida)</p>
-                <p class="node-meta">Hotel Wellington & Spa 5* | Madrid | 2020 - 2023</p>
-                <p>Despliegue operativo en banquetes de alta gama, eventos institucionales y servicio a la carta. Gestión integral del cuarto frío y apoyo crítico en pases de alta presión bajo estándares hoteleros de 5 estrellas.</p>
             </div>
         </div>
     </section>
@@ -650,7 +676,7 @@
         <div class="cta-container">
             <h3>¿Hacemos una prueba en tu cocina?</h3>
             <p>Estoy listo para agendar una entrevista técnica o diseñar una propuesta de menú presencial.</p>
-            <a href="mailto:carlos.mendoza.chef@email.com?subject=Propuesta%20de%20Prueba%20de%20Cocina" class="cta-link">Agendar Prueba Directa</a>
+            <a href="mailto:alfrepei@gmail.com?subject=Propuesta%20de%20Prueba%20de%20Cocina" class="cta-link">Agendar Prueba Directa</a>
         </div>
     </div>
 
@@ -658,8 +684,8 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true, /* La animación ocurre solo la primera vez que bajas, para no molestar la lectura */
-            offset: 120 /* El elemento empieza a aparecer 120px antes de entrar en la pantalla */
+            once: true,
+            offset: 120
         });
     </script>
 </body>
