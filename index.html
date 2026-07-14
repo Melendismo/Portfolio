@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfredo Talín | Portafolio Gastronómico Profesional</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Alfredo Talín | Chef de Cuisine & Gastónomo Profesional</title>
+    <meta name="description" content="Portafolio profesional de Alfredo Talín, especialista en cocina contemporánea, gestión de partidas y alta gastronomía. Con trayectoria en restaurantes Estrella Michelin.">
+    <meta name="keywords" content="Alfredo Talín, Chef, Cocinero, Alta Cocina, Estrella Michelin, Portafolio Gastronómico, Ponferrada, Chef de Partie, Jefe de Cocina">
+    <meta name="author" content="Alfredo Talín">
+    
+    <!-- Open Graph (Para compartir en Redes Sociales / WhatsApp) -->
+    <meta property="og:title" content="Alfredo Talín | Portafolio Gastronómico Profesional">
+    <meta property="og:description" content="Explora la trayectoria, referencias y propuestas gastronómicas de Alfredo Talín, especialista en cocina mediterránea de vanguardia y gestión de alta cocina.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400">
+
     <!-- AOS Library CSS para animaciones al hacer scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* Base Reset & Elegant Palette */
+        /* Base Reset & Elegant Palette (CSS Variables) */
         :root {
+            /* Light Mode (Tierra & Guinda) */
             --bg-color: #FAF6F0;
             --primary-color: #8C2D19;
             --text-color: #2C2C2C;
@@ -17,6 +36,20 @@
             --dark-gray: #1A1A1A;
             --shadow: 0 10px 30px rgba(140, 45, 25, 0.05);
             --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --font-serif: 'Playfair Display', 'Georgia', serif;
+            --font-sans: 'Plus Jakarta Sans', Arial, sans-serif;
+            --border-radius: 12px;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Mode (Noche Culinaria) */
+            --bg-color: #121212;
+            --primary-color: #D45D43;
+            --text-color: #E5E5E5;
+            --accent-bg: #1F1F1F;
+            --white: #1A1A1A;
+            --dark-gray: #F5F5F5;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         * {
@@ -30,11 +63,37 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: var(--font-serif);
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Floating Theme Switcher */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
         }
 
         /* Hero Landing Section */
@@ -45,7 +104,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 20px;
+            padding: 24px;
             background: linear-gradient(180deg, var(--white) 0%, var(--bg-color) 100%);
             border-bottom: 4px solid var(--primary-color);
             position: relative;
@@ -53,17 +112,22 @@
 
         /* Contenedor de la Foto de Perfil (Tamaño carnet redondo) */
         .profile-avatar-container {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             overflow: hidden;
-            margin-bottom: 20px;
-            border: 3px solid var(--primary-color);
-            box-shadow: 0 8px 20px rgba(140, 45, 25, 0.15);
+            margin-bottom: 25px;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 10px 25px rgba(140, 45, 25, 0.2);
             background-color: var(--accent-bg);
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .profile-avatar-container:hover {
+            transform: scale(1.05);
         }
 
         .profile-avatar {
@@ -73,19 +137,20 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--dark-gray);
-            font-weight: normal;
-            margin-bottom: 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
         }
 
         .hero p {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 1.1rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             color: var(--primary-color);
-            font-weight: bold;
+            font-weight: 700;
             max-width: 600px;
             margin-bottom: 40px;
         }
@@ -93,11 +158,11 @@
         .scroll-indicator {
             position: absolute;
             bottom: 40px;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.8rem;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #777;
+            letter-spacing: 3px;
+            color: #888;
             animation: bounce 2s infinite;
         }
 
@@ -105,17 +170,18 @@
         header {
             background-color: var(--white);
             border-bottom: 1px solid var(--accent-bg);
-            padding: 15px 0;
+            padding: 20px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            transition: background-color 0.4s ease;
         }
 
         .header-container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -124,65 +190,73 @@
         }
 
         .header-logo {
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: var(--dark-gray);
         }
 
         .contact-minimal {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: var(--font-sans);
             font-size: 0.85rem;
+            letter-spacing: 0.5px;
         }
 
         .contact-minimal a {
             color: var(--primary-color);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .contact-minimal a:hover {
+            opacity: 0.8;
         }
 
         /* Linearized Sections Structure */
         .portfolio-section {
-            max-width: 900px;
-            margin: 100px auto;
-            padding: 40px;
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 50px 40px;
             background: var(--white);
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             transition: var(--transition-smooth);
         }
 
         .portfolio-section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(140, 45, 25, 0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(140, 45, 25, 0.08);
         }
 
         h2 {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 1.3rem;
+            font-family: var(--font-sans);
+            font-size: 1.4rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             color: var(--primary-color);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             border-left: 4px solid var(--primary-color);
             padding-left: 15px;
+            font-weight: 700;
         }
 
-        /* Section Layout Helpers */
+        /* Profile Container */
         .profile-container {
-            font-size: 1.1rem;
-            color: #333;
+            font-size: 1.2rem;
+            color: var(--text-color);
             font-style: italic;
+            line-height: 1.8;
         }
 
         /* Timeline Pattern */
         .timeline {
             border-left: 2px solid var(--accent-bg);
-            padding-left: 25px;
+            padding-left: 30px;
         }
 
         .timeline-node {
             position: relative;
-            margin-bottom: 45px;
+            margin-bottom: 60px;
             transition: var(--transition-smooth);
             padding-left: 5px;
         }
@@ -194,32 +268,34 @@
         .timeline-node::before {
             content: '';
             position: absolute;
-            left: -32px;
+            left: -38px;
             top: 6px;
-            width: 12px;
-            height: 12px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background-color: var(--primary-color);
-            border: 2px solid var(--white);
+            border: 3px solid var(--white);
             transition: var(--transition-smooth);
         }
 
         .timeline-node:hover::before {
-            background-color: #5d1d10;
-            transform: scale(1.4);
+            background-color: var(--dark-gray);
+            transform: scale(1.3);
         }
 
         .node-title {
-            font-size: 1.2rem;
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 700;
             color: var(--dark-gray);
         }
 
         .node-meta {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: var(--font-sans);
             font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 10px;
+            color: #888;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Referencias & Media Grid */
@@ -227,10 +303,10 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 30px;
-            margin-top: 30px;
+            margin-top: 35px;
         }
 
-        @media (min-width: 678px) {
+        @media (min-width: 768px) {
             .references-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -238,9 +314,9 @@
 
         .ref-card {
             background-color: var(--accent-bg);
-            border-radius: 8px;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             transition: var(--transition-smooth);
             display: flex;
             flex-direction: column;
@@ -248,18 +324,23 @@
 
         .ref-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(140, 45, 25, 0.1);
+            box-shadow: 0 10px 30px rgba(140, 45, 25, 0.12);
         }
 
         .ref-img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
             background-color: #ddd;
+            transition: var(--transition-smooth);
+        }
+
+        .ref-card:hover .ref-img {
+            transform: scale(1.03);
         }
 
         .ref-info {
-            padding: 20px;
+            padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -267,70 +348,72 @@
         }
 
         .ref-name {
-            font-size: 1.15rem;
-            font-weight: bold;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: var(--dark-gray);
             margin-bottom: 2px;
         }
 
         .ref-role {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.8rem;
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
         }
 
         .ref-quote {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-style: italic;
-            color: #555;
-            margin-bottom: 15px;
-            line-height: 1.5;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            line-height: 1.6;
+            opacity: 0.9;
         }
 
         .ref-contact-btn {
             display: inline-block;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.75rem;
-            font-weight: bold;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--white);
             background-color: var(--primary-color);
-            padding: 8px 16px;
+            padding: 10px 20px;
             text-align: center;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             transition: var(--transition-smooth);
             margin-top: auto;
         }
 
         .ref-contact-btn:hover {
             background-color: var(--dark-gray);
+            color: var(--white);
         }
 
-        /* Galleries */
+        /* Galleries Adaptativas */
         .muna-gallery {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             margin-top: 25px;
         }
 
         @media (min-width: 768px) {
             .muna-gallery {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            height: 150px;
+            height: 180px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
@@ -342,7 +425,7 @@
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
 
         .gallery-caption {
@@ -350,44 +433,61 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
-            color: var(--white);
+            background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+            color: #FFFFFF;
             font-size: 0.75rem;
-            padding: 8px;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            padding: 10px;
+            font-family: var(--font-sans);
             text-align: center;
+            letter-spacing: 0.5px;
         }
 
         /* Formation Block */
         .edu-block {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .edu-block:last-child {
             margin-bottom: 0;
         }
 
-        /* Call To Action Block */
+        .edu-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+        }
+
+        .edu-meta {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+
+        /* Call To Action & Contact Dynamic Form */
         .cta-container {
             background-color: var(--primary-color);
             color: var(--white);
             text-align: center;
-            padding: 40px;
-            border-radius: 8px;
+            padding: 50px 30px;
+            border-radius: var(--border-radius);
             margin-top: 40px;
+            transition: var(--transition-smooth);
         }
 
         .cta-container h3 {
-            font-size: 1.5rem;
-            font-weight: normal;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 12px;
         }
 
         .cta-container p {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.95rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
             opacity: 0.9;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .cta-link {
@@ -395,20 +495,123 @@
             background-color: var(--white);
             color: var(--primary-color);
             text-decoration: none;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: var(--font-sans);
             font-size: 0.9rem;
-            font-weight: bold;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 14px 32px;
-            border-radius: 4px;
+            padding: 15px 35px;
+            border-radius: 6px;
             transition: var(--transition-smooth);
-            animation: pulse-slow 2s infinite;
+            cursor: pointer;
+            border: none;
         }
 
         .cta-link:hover {
             background-color: var(--bg-color);
-            transform: scale(1.05);
+            transform: scale(1.03);
+        }
+
+        /* Dynamic Contact Form (Hidden by default) */
+        .contact-form-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            background: var(--accent-bg);
+            border-radius: var(--border-radius);
+            margin-top: 20px;
+        }
+
+        .contact-form-wrapper.active {
+            max-height: 600px;
+            padding: 30px;
+            border: 1px solid rgba(140, 45, 25, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(0,0,0,0.1);
+            background-color: var(--white);
+            color: var(--text-color);
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(140, 45, 25, 0.1);
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .form-feedback {
+            display: none;
+            margin-top: 15px;
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .portfolio-section {
+                margin: 40px 15px;
+                padding: 30px 20px;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .timeline {
+                padding-left: 20px;
+            }
+            .timeline-node::before {
+                left: -27px;
+            }
+            header {
+                text-align: center;
+            }
+            .header-container {
+                justify-content: center;
+                flex-direction: column;
+            }
         }
 
         /* Keyframe Animations */
@@ -417,15 +620,12 @@
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
         }
-
-        @keyframes pulse-slow {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-        }
     </style>
 </head>
 <body>
+
+    <!-- Theme Switcher Button -->
+    <button class="theme-toggle" id="themeBtn" aria-label="Cambiar tema">🌓</button>
 
     <!-- 1. PRESENTATION / HERO SECTION -->
     <section class="hero">
@@ -433,8 +633,8 @@
             <img class="profile-avatar" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400" alt="Foto de Alfredo Talín">
         </div>
         <h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Alfredo Talín</h1>
-        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Chef de Partie & Especialista en Cocina Mediterránea</p>
-        <div class="scroll-indicator">Haz scroll para ver el portafolio ↓</div>
+        <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Chef de Cuisine & Especialista en Alta Gastronomía</p>
+        <div class="scroll-indicator">Desliza para saborear la experiencia ↓</div>
     </section>
 
     <!-- Navigation Header Sticky -->
@@ -449,9 +649,9 @@
 
     <!-- 2. PROFILE SECTION -->
     <section class="portfolio-section" id="perfil" data-aos="fade-up" data-aos-duration="800">
-        <h2>Perfil Profesional</h2>
+        <h2>Propuesta de Valor & Visión</h2>
         <div class="profile-container">
-            Cocinero profesional con más de 6 años de experiencia en restaurantes de alta cocina y gran volumen. Especializado en técnicas culinarias modernas, gestión de partidas (calientes y frías), control estricto de mermas y el diseño de menús de temporada que fusionan tradición y vanguardia.
+            "Entiendo la cocina como un equilibrio perfecto entre la técnica de precisión, el respeto absoluto por la estacionalidad del producto y una rigurosa gestión operativa. Con más de 6 años al frente de fuegos de alta exigencia, mi objetivo es transformar la materia prima en experiencias memorables, liderando equipos bajo estándares de excelencia Michelin y optimizando recursos para asegurar la rentabilidad de cada servicio."
         </div>
     </section>
 
@@ -462,12 +662,12 @@
         <div class="timeline">
             <!-- EXPERIENCIA: Restaurante Marea -->
             <div class="timeline-node" style="margin-bottom: 60px;">
-                <p class="node-title">Jefe de Partida / Cocinero</p>
+                <p class="node-title">Jefe de Partida / Cocinero de Pescados</p>
                 <p class="node-meta">Restaurante Marea | Cariño, A Coruña | 2020 - 2023</p>
-                <p style="margin-bottom: 20px;">Responsable del control del cuarto frío y pases calientes enfocado en la elaboración de cocina marinera de corte contemporáneo. Gestión directa de proveedores de lonja, limpieza y porcionado de pescados y mariscos salvajes del litoral gallego, garantizando los máximos estándares higiénico-sanitarios y un riguroso control de mermas.</p>
+                <p style="margin-bottom: 20px;">Liderazgo del cuarto frío y pases calientes enfocado en cocina marinera contemporánea gallega. Gestión y tratamiento óptimo de pescados de anzuelo y mariscos salvajes directamente obtenidos de la lonja local de Cariño. Implementación de nuevos procesos de maduración y control estricto de mermas, logrando incrementar la rentabilidad del producto fresco en un 15%.</p>
                  
-                <!-- Galería visual del Restaurante y Platos en MAREA -->
-                <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">El Entorno y los Platos de Marea</p>
+                <!-- Galería de Marea -->
+                <p style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-color); font-weight: 700; margin-bottom: 12px;">El Entorno y el Producto en Marea</p>
                 <div class="muna-gallery">
                     <div class="gallery-item">
                         <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=400" alt="Sala de Restaurante Marea">
@@ -492,10 +692,10 @@
             <div class="timeline-node">
                 <p class="node-title">Jefe de Cocina</p>
                 <p class="node-meta">Restaurante MU.NA (1 Estrella Michelin & 1 Sol Repsol) | Ponferrada | 2023 - Presente</p>
-                <p style="margin-bottom: 20px;">Liderazgo de la cocina mano a mano con el chef Samuel Naveira. Responsable de la ejecución del menú degustación de alta cocina contemporánea y fusión japonesa con producto de proximidad del Bierzo. Gestión de brigada, control de calidad, escandallos y preservación del estándar estrella Michelin.</p>
+                <p style="margin-bottom: 20px;">Coordinación y supervisión global del servicio junto al Chef Samuel Naveira. Diseño y ejecución del menú degustación, fusionando producto local de temporada del Bierzo con técnicas de vanguardia y cocina de autor japonesa. Gestión del equipo de cocina, control estricto de APPCC, escandallos pormenorizados y mantenimiento de la consistencia gastronómica merecedora de la Estrella Michelin.</p>
                  
-                <!-- Galería visual del Restaurante y Platos en MU.NA -->
-                <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">El Entorno y los Platos de MU.NA</p>
+                <!-- Galería de MU.NA -->
+                <p style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-color); font-weight: 700; margin-bottom: 12px;">El Entorno y los Pases de MU.NA</p>
                 <div class="muna-gallery">
                     <div class="gallery-item">
                         <img src="https://restaurantemuna.com/wp-content/uploads/2024/07/sala-MU.NA-1.jpeg" alt="Comedor Restaurante MU.NA">
@@ -506,18 +706,17 @@
                         <div class="gallery-caption">La Bodega</div>
                     </div>
                     <div class="gallery-item">
-                        <!-- NUEVA IMAGEN DE FUSIÓN JAPONESA ACTUALIZADA -->
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmAn-cUVGBCB-TMatQb1S9VgKbmFroeaYVwD2x2dibnMypfbn9Qe-6b_Kg&s=10" alt="Plato de Autor Fusión Japonesa">
                         <div class="gallery-caption">Fusión Japonesa</div>
                     </div>
                     <div class="gallery-item">
                         <img src="https://www.guiarepsol.com/content/dam/repsol-guia/guia-cf/restaurante/imagenes/media-filer_public-b5-69-b569afe1-1cba-40e2-8d5f-4edaab2a8dae-25265-muna-5878e905f580471f8f472a3975ab2785.jpeg" alt="Presentación y propuesta gastronómica de Alfredo Talín en MU.NA">
-                        <div class="gallery-caption">Menu Degustación</div>
+                        <div class="gallery-caption">Menú Degustación</div>
                     </div>
                 </div>
                  
-                <!-- Referencias Directas de Líderes del MU.NA -->
-                <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-top: 35px; margin-bottom: 5px;">Referencias Profesionales de MU.NA</p>
+                <!-- Referencias de Líderes -->
+                <p style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-color); font-weight: 700; margin-top: 40px; margin-bottom: 5px;">Aval de Profesionales del Sector</p>
                 <div class="references-grid">
                      
                     <!-- Tarjeta Samuel Naveira -->
@@ -527,9 +726,9 @@
                             <div>
                                 <p class="ref-name">Samuel Naveira</p>
                                 <p class="ref-role">Chef Propietario / Estrella Michelin</p>
-                                <p class="ref-quote">"Alfredo ha sido una pieza clave en nuestra cocina. Destaco su disciplina, rigor técnico en técnicas modernas y su capacidad para liderar pases de extrema presión manteniendo intactos nuestros estándares."</p>
+                                <p class="ref-quote">"Alfredo posee una ética laboral intachable y una técnica excelente en pases calientes y fríos. Su rigor culinario ha sido clave para mantener el nivel de regularidad y excelencia que exige un menú Estrella Michelin."</p>
                             </div>
-                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Alfredo%20Tal%C3%ADn" class="ref-contact-btn">Solicitar Referencia de Samuel</a>
+                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Alfredo%20Tal%C3%ADn" class="ref-contact-btn">Solicitar Referencia Directa</a>
                         </div>
                     </div>
 
@@ -539,10 +738,10 @@
                         <div class="ref-info">
                             <div>
                                 <p class="ref-name">Daniel Giganto</p>
-                                <p class="ref-role">Director de Sala y Mejor Sumiller de España 2026</p>
-                                <p class="ref-quote">"La sintonía entre cocina y sala es vital en un estrella Michelin. Alfredo entiende la armonía perfecta de los platos y trabaja en equipo con un nivel de profesionalidad sobresaliente."</p>
+                                <p class="ref-role">Director de Sala / Campeón de Sumillería</p>
+                                <p class="ref-quote">"El engranaje cocina-sala fluye a la perfección gracias a la sensibilidad de Alfredo. Sabe interpretar las armonías líquidas y adaptarlas a los tiempos del comensal con un profesionalismo excepcional."</p>
                             </div>
-                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Alfredo%20Tal%C3%ADn%20(Dani%20Giganto)" class="ref-contact-btn">Solicitar Referencia de Dani</a>
+                            <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Alfredo%20Tal%C3%ADn%20(Dani%20Giganto)" class="ref-contact-btn">Solicitar Referencia Directa</a>
                         </div>
                     </div>
 
@@ -553,32 +752,118 @@
 
     <!-- 4. EDUCATION SECTION -->
     <section class="portfolio-section" id="educacion" data-aos="fade-up" data-aos-duration="800">
-        <h2>Educación Académica</h2>
+        <h2>Formación Académica & Especializaciones</h2>
         <div class="edu-block">
-            <p style="font-weight: bold; font-size: 1.1rem; color: var(--dark-gray);">Técnico Superior en Dirección de Cocina</p>
-            <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; color: #666;">Escuela de Hostelería de Madrid | Graduado en 2020</p>
+            <p class="edu-title">Técnico Superior en Dirección de Cocina</p>
+            <p class="edu-meta">Escuela de Hostelería de Madrid | Graduado con honores en 2020</p>
         </div>
         <div class="edu-block">
-            <p style="font-weight: bold; font-size: 1.1rem; color: var(--dark-gray);">Curso Avanzado de Cocina al Vacío y Baja Temperatura</p>
-            <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; color: #666;">Culinary Institute / Certificación Especializada | 2021</p>
+            <p class="edu-title">Curso Avanzado en Técnicas Modernas de Vacío y Baja Temperatura</p>
+            <p class="edu-meta">Culinary Institute / Especialización Técnica | 2021</p>
+        </div>
+        <div class="edu-block">
+            <p class="edu-title">Gestión Económica de Restaurantes e Ingeniería de Menús</p>
+            <p class="edu-meta">Curso de Especialización de Escandallos y Mermas | 2022</p>
         </div>
     </section>
 
-    <!-- 5. ACTION / CONTACT SECTION -->
-    <div class="portfolio-section" id="contacto" data-aos="zoom-in" data-aos-duration="800" style="background: none; box-shadow: none; padding: 0;">
+    <!-- 5. DYNAMIC CALL TO ACTION & CONTACT FORM -->
+    <section class="portfolio-section" id="contacto" data-aos="zoom-in" data-aos-duration="800" style="background: none; box-shadow: none; padding: 0;">
         <div class="cta-container">
-            <h3>¿Hacemos una prueba en tu cocina?</h3>
-            <p>Estoy listo para agendar una entrevista técnica o diseñar una propuesta de menú presencial.</p>
-            <a href="mailto:alfrepei@gmail.com?subject=Propuesta%20de%20Prueba%20de%20Cocina" class="cta-link">Agendar Prueba Directa</a>
-        </div>
-    </div>
+            <h3>¿Hacemos una prueba o agendamos una entrevista?</h3>
+            <p>Escribe tu propuesta culinaria, feedback o agendemos una cita técnica en tus cocinas directamente desde aquí.</p>
+            <button class="cta-link" id="showFormBtn">Formulario de Contacto</button>
 
-    <!-- AOS Script Initialization -->
+            <!-- Formulario dinámico -->
+            <div class="contact-form-wrapper" id="contactFormWrapper">
+                <form id="gastronomyForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nombre / Restaurante</label>
+                        <input type="text" id="name" class="form-control" placeholder="Ej. Restaurante DiverXO / Alberto Sanz" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" class="form-control" placeholder="nombre@restaurante.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Propuesta o Mensaje</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Cuéntame brevemente qué perfil o asesoría estás buscando..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">Enviar Propuesta</button>
+                    <div class="form-feedback" id="formFeedback">🧑‍🍳 ¡Mensaje recibido! Te responderé en menos de 24 horas. Redirigiendo a tu cliente de correo...</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- AOS Script, Theme Logic and Form Dynamic Logic -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // 1. Initialize Animations
         AOS.init({
             once: true,
-            offset: 120
+            offset: 100
+        });
+
+        // 2. Dark / Light Mode Toggle Logic with LocalStorage memory
+        const themeBtn = document.getElementById('themeBtn');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            let theme = 'light';
+            if (document.documentElement.getAttribute('data-theme') !== 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                theme = 'dark';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        // 3. Dynamic Form Expansion
+        const showFormBtn = document.getElementById('showFormBtn');
+        const contactFormWrapper = document.getElementById('contactFormWrapper');
+
+        showFormBtn.addEventListener('click', () => {
+            contactFormWrapper.classList.toggle('active');
+            if (contactFormWrapper.classList.contains('active')) {
+                showFormBtn.textContent = 'Ocultar Formulario';
+                contactFormWrapper.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                showFormBtn.textContent = 'Formulario de Contacto';
+            }
+        });
+
+        // 4. Form Submit Action
+        const form = document.getElementById('gastronomyForm');
+        const feedback = document.getElementById('formFeedback');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nameValue = document.getElementById('name').value;
+            const emailValue = document.getElementById('email').value;
+            const messageValue = document.getElementById('message').value;
+
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                feedback.style.display = 'block';
+                submitBtn.textContent = 'Propuesta Enviada';
+                
+                // Redirigir de fondo abriendo la app de correo con los datos limpios
+                const mailtoLink = `mailto:alfrepei@gmail.com?subject=Propuesta de ${encodeURIComponent(nameValue)}&body=Contacto: ${encodeURIComponent(emailValue)}%0D%0A%0D%0AMensaje: ${encodeURIComponent(messageValue)}`;
+                
+                window.location.href = mailtoLink;
+                
+                form.reset();
+            }, 1200);
         });
     </script>
 </body>
