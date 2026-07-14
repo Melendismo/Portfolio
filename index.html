@@ -172,62 +172,16 @@
             font-size: 1.1rem;
             color: #333;
             font-style: italic;
+            margin-bottom: 30px;
         }
 
-        /* Imagen principal para el menú degustación */
+        /* Imagen principal de menú en Perfil */
         .menu-hero-img {
             width: 100%;
-            height: 350px;
+            height: 380px;
             object-fit: cover;
             border-radius: 6px;
-            margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Highlight Cards for Recipes */
-        .dish-card {
-            background-color: var(--accent-bg);
-            border-radius: 6px;
-            padding: 25px;
-            margin-bottom: 25px;
-            transition: var(--transition-smooth);
-        }
-
-        .dish-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .dish-card:hover {
-            background-color: #ECE3D7;
-            transform: scale(1.01);
-        }
-
-        .dish-title {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--dark-gray);
-            margin-bottom: 5px;
-        }
-
-        .dish-tag {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary-color);
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .dish-bullets {
-            padding-left: 20px;
-            font-size: 0.95rem;
-            color: #444;
-            margin-top: 10px;
-        }
-
-        .dish-bullets li {
-            margin-bottom: 6px;
         }
 
         /* Timeline Pattern */
@@ -284,7 +238,6 @@
             grid-template-columns: 1fr;
             gap: 30px;
             margin-top: 30px;
-            border-top: none; /* Quitamos bordes redundantes */
         }
 
         @media (min-width: 678px) {
@@ -369,7 +322,7 @@
             background-color: var(--dark-gray);
         }
 
-        /* Gallery/Dishes of MU.NA */
+        /* Galleries */
         .muna-gallery {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -487,12 +440,11 @@
     <!-- 1. PRESENTATION / HERO SECTION -->
     <section class="hero">
         <div class="profile-avatar-container" data-aos="fade-up" data-aos-duration="1000">
-            <!-- Temporal: foto de perfil -->
             <img class="profile-avatar" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400" alt="Foto de Alfredo Talín">
         </div>
         <h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Alfredo Talín</h1>
         <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Chef de Partie & Especialista en Cocina Mediterránea</p>
-        <div class="scroll-indicator">Haz scroll para ver el menú ↓</div>
+        <div class="scroll-indicator">Haz scroll para ver el portafolio ↓</div>
     </section>
 
     <!-- Navigation Header Sticky -->
@@ -511,48 +463,41 @@
         <div class="profile-container">
             Cocinero profesional con más de 6 años de experiencia en restaurantes de alta cocina y gran volumen. Especializado en técnicas culinarias modernas, gestión de partidas (calientes y frías), control estricto de mermas y el diseño de menús de temporada que fusionan tradición y vanguardia.
         </div>
+        <!-- IMAGEN REAL SUMINISTRADA (GUÍA REPSOL) INTEGRADA AQUÍ -->
+        <img class="menu-hero-img" src="https://www.guiarepsol.com/content/dam/repsol-guia/guia-cf/restaurante/imagenes/media-filer_public-b5-69-b569afe1-1cba-40e2-8d5f-4edaab2a8dae-25265-muna-5878e905f580471f8f472a3975ab2785.jpeg" alt="Presentación y propuesta gastronómica de Alfredo Talín">
     </section>
 
-    <!-- 3. MENÚ DEGUSTACIÓN SECTION -->
-    <section class="portfolio-section" id="platos" data-aos="fade-up" data-aos-duration="800">
-        <h2>Menu Degustación</h2>
-        
-        <!-- IMAGEN REAL SUMINISTRADA (GUÍA REPSOL) -->
-        <img class="menu-hero-img" src="https://www.guiarepsol.com/content/dam/repsol-guia/guia-cf/restaurante/imagenes/media-filer_public-b5-69-b569afe1-1cba-40e2-8d5f-4edaab2a8dae-25265-muna-5878e905f580471f8f472a3975ab2785.jpeg" alt="Presentación Menú Degustación">
-
-        <div class="dish-card">
-            <p class="dish-title">1. Pulpo a Baja Temperatura</p>
-            <p class="dish-tag">Técnica Avanzada & Texturas</p>
-            <p>Un plato insignia que demuestra precisión técnica y respeto absoluto por el producto tradicional:</p>
-            <ul class="dish-bullets">
-                <li>Cocción al vacío controlada a 77°C durante 5 horas completas.</li>
-                <li>Emulsión aterciopelada de patata con aceite de trufa blanca y pimentón puro de la Vera.</li>
-                <li><strong>Logro:</strong> Incrementó la venta directa de entradas en un 20% en mi último puesto.</li>
-            </ul>
-        </div>
-
-        <div class="dish-card">
-            <p class="dish-title">2. Lomo de Bacalao Confitado</p>
-            <p class="dish-tag">Cocina de Autor & Esencia Marina</p>
-            <p>Fusión de técnicas de conservación tradicionales con emplatados modernos, minimalistas y limpios:</p>
-            <ul class="dish-bullets">
-                <li>Confitado milimétrico en aceite de oliva virgen extra aromatizado a 62°C.</li>
-                <li>Crujiente texturizado de alga nori y aire de codium para potenciar el golpe marino.</li>
-                <li><strong>Rendimiento:</strong> Control estricto de desperdicio con un coste de escandallo fijado en el 28%.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- 4. EXPERIENCE SECTION -->
+    <!-- 3. EXPERIENCE SECTION -->
     <section class="portfolio-section" id="experiencia" data-aos="fade-up" data-aos-duration="800">
         <h2>Trayectoria Laboral & Referencias</h2>
         
         <div class="timeline">
             <!-- EXPERIENCIA: Restaurante Marea -->
-            <div class="timeline-node">
+            <div class="timeline-node" style="margin-bottom: 60px;">
                 <p class="node-title">Jefe de Partida / Cocinero</p>
                 <p class="node-meta">Restaurante Marea | Cariño, A Coruña | 2020 - 2023</p>
-                <p>Responsable del control del cuarto frío y pases calientes enfocado en la elaboración de cocina marinera de corte contemporáneo. Gestión directa de proveedores de lonja, limpieza y porcionado de pescados y mariscos salvajes del litoral gallego, garantizando los máximos estándares higiénico-sanitarios y un riguroso control de mermas.</p>
+                <p style="margin-bottom: 20px;">Responsable del control del cuarto frío y pases calientes enfocado en la elaboración de cocina marinera de corte contemporáneo. Gestión directa de proveedores de lonja, limpieza y porcionado de pescados y mariscos salvajes del litoral gallego, garantizando los máximos estándares higiénico-sanitarios y un riguroso control de mermas.</p>
+                
+                <!-- Galería visual del Restaurante y Platos en MAREA -->
+                <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">El Entorno y los Platos de Marea</p>
+                <div class="muna-gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=400" alt="Sala de Restaurante Marea">
+                        <div class="gallery-caption">La Sala</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&q=80&w=400" alt="Pescado de la lonja de Cariño">
+                        <div class="gallery-caption">Producto Local</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1534080391025-4979e8314470?auto=format&fit=crop&q=80&w=400" alt="Marisco Fresco Gallego">
+                        <div class="gallery-caption">Mariscos</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=400" alt="Emplatado Marinero en Marea">
+                        <div class="gallery-caption">Cocina Marinera</div>
+                    </div>
+                </div>
             </div>
 
             <!-- EXPERIENCIA: Restaurante MU.NA -->
@@ -565,24 +510,20 @@
                 <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">El Entorno y los Platos de MU.NA</p>
                 <div class="muna-gallery">
                     <div class="gallery-item">
-                        <!-- ENLACE REAL SUMINISTRADO -->
                         <img src="https://restaurantemuna.com/wp-content/uploads/2024/07/sala-MU.NA-1.jpeg" alt="Comedor Restaurante MU.NA">
                         <div class="gallery-caption">El Comedor</div>
                     </div>
                     <div class="gallery-item">
-                        <!-- ENLACE REAL SUMINISTRADO -->
                         <img src="https://www.digitaldeleon.com/asset/thumbnail,1280,720,center,center/media/digitaldeleon/images/2025/02/25/20250225124414306001.webp" alt="La Bodega de MU.NA">
                         <div class="gallery-caption">La Bodega</div>
                     </div>
                     <div class="gallery-item">
-                        <!-- Temporal: Plato Alta Cocina Fusión -->
                         <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=400" alt="Plato de Autor Fusión Japonesa">
                         <div class="gallery-caption">Fusión Japonesa</div>
                     </div>
                     <div class="gallery-item">
-                        <!-- Temporal: Plato Marítimo Gourmet -->
                         <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=400" alt="Producto del Bierzo y Mar">
-                        <div class="gallery-caption">Producto & Mar</div>
+                        <div class="gallery-caption">Menu Degustación</div>
                     </div>
                 </div>
                 
@@ -592,7 +533,6 @@
                     
                     <!-- Tarjeta Samuel Naveira -->
                     <div class="ref-card">
-                        <!-- ENLACE REAL SUMINISTRADO -->
                         <img class="ref-img" src="https://restaurantemuna.com/wp-content/uploads/2025/08/99ea5c5f-be55-4ba3-adbf-77a8eefda80d-1024x683.jpeg" alt="Samuel Naveira - Chef de MU.NA">
                         <div class="ref-info">
                             <div>
@@ -606,7 +546,6 @@
 
                     <!-- Tarjeta Dani Giganto -->
                     <div class="ref-card">
-                        <!-- ENLACE REAL SUMINISTRADO -->
                         <img class="ref-img" src="https://ponferradahoy.com/wp-content/uploads/2024/05/445517770_18265532296214121_280441537754060970_n-e1716881976217.jpg" alt="Dani Giganto - Sumiller de MU.NA">
                         <div class="ref-info">
                             <div>
@@ -623,7 +562,7 @@
         </div>
     </section>
 
-    <!-- 5. EDUCATION SECTION -->
+    <!-- 4. EDUCATION SECTION -->
     <section class="portfolio-section" id="educacion" data-aos="fade-up" data-aos-duration="800">
         <h2>Educación Académica</h2>
         <div class="edu-block">
@@ -636,7 +575,7 @@
         </div>
     </section>
 
-    <!-- 6. ACTION / CONTACT SECTION -->
+    <!-- 5. ACTION / CONTACT SECTION -->
     <div class="portfolio-section" id="contacto" data-aos="zoom-in" data-aos-duration="800" style="background: none; box-shadow: none; padding: 0;">
         <div class="cta-container">
             <h3>¿Hacemos una prueba en tu cocina?</h3>
@@ -645,7 +584,7 @@
         </div>
     </div>
 
-    <!-- AOS Script Initialization para controlar la aparición al hacer scroll -->
+    <!-- AOS Script Initialization -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
