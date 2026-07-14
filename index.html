@@ -174,37 +174,14 @@
             font-style: italic;
         }
 
-        .specialties-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-
-        @media (min-width: 600px) {
-            .specialties-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .spec-item {
-            padding: 15px 0;
-            transition: var(--transition-smooth);
-        }
-
-        .spec-item:hover {
-            transform: translateX(8px);
-        }
-
-        .spec-item strong {
-            display: block;
-            font-size: 1.05rem;
-            color: var(--dark-gray);
-            margin-bottom: 5px;
-            transition: var(--transition-smooth);
-        }
-
-        .spec-item:hover strong {
-            color: var(--primary-color);
+        /* Imagen principal para el menú degustación */
+        .menu-hero-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         /* Highlight Cards for Recipes */
@@ -307,6 +284,7 @@
             grid-template-columns: 1fr;
             gap: 30px;
             margin-top: 30px;
+            border-top: none; /* Quitamos bordes redundantes */
         }
 
         @media (min-width: 678px) {
@@ -509,7 +487,8 @@
     <!-- 1. PRESENTATION / HERO SECTION -->
     <section class="hero">
         <div class="profile-avatar-container" data-aos="fade-up" data-aos-duration="1000">
-            <img class="profile-avatar" src="img/alfredo-talin.jpg" alt="Foto de Alfredo Talín">
+            <!-- Temporal: foto de perfil -->
+            <img class="profile-avatar" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&q=80&w=400" alt="Foto de Alfredo Talín">
         </div>
         <h1 data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Alfredo Talín</h1>
         <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">Chef de Partie & Especialista en Cocina Mediterránea</p>
@@ -534,33 +513,13 @@
         </div>
     </section>
 
-    <!-- 3. SPECIALTIES SECTION -->
-    <section class="portfolio-section" id="especialidades" data-aos="fade-up" data-aos-duration="800">
-        <h2>Especialidades Técnicas</h2>
-        <div class="specialties-grid">
-            <div class="spec-item">
-                <strong>Gestión de Partidas</strong>
-                Salsas, carnes, pescados y cuarto frío bajo alta presión de servicio continuo.
-            </div>
-            <div class="spec-item">
-                <strong>Técnicas Modernas</strong>
-                Cocción exacta a baja temperatura, técnicas de vacío, espumas nitrogenadas y texturizados.
-            </div>
-            <div class="spec-item">
-                <strong>Gestión Operativa</strong>
-                Control exhaustivo de stocks, cálculo de escandallos complejos, normativa APPCC y liderazgo.
-            </div>
-            <div class="spec-item">
-                <strong>Idiomas</strong>
-                Español (nativo) e Inglés funcional (nivel intermedio-B2 orientado a hostelería).
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. SIGNATURE DISHES SECTION -->
+    <!-- 3. MENÚ DEGUSTACIÓN SECTION -->
     <section class="portfolio-section" id="platos" data-aos="fade-up" data-aos-duration="800">
-        <h2>Propuesta & Platos Destacados</h2>
+        <h2>Menu Degustación</h2>
         
+        <!-- IMAGEN REAL SUMINISTRADA (GUÍA REPSOL) -->
+        <img class="menu-hero-img" src="https://www.guiarepsol.com/content/dam/repsol-guia/guia-cf/restaurante/imagenes/media-filer_public-b5-69-b569afe1-1cba-40e2-8d5f-4edaab2a8dae-25265-muna-5878e905f580471f8f472a3975ab2785.jpeg" alt="Presentación Menú Degustación">
+
         <div class="dish-card">
             <p class="dish-title">1. Pulpo a Baja Temperatura</p>
             <p class="dish-tag">Técnica Avanzada & Texturas</p>
@@ -584,12 +543,12 @@
         </div>
     </section>
 
-    <!-- 5. EXPERIENCE SECTION -->
+    <!-- 4. EXPERIENCE SECTION -->
     <section class="portfolio-section" id="experiencia" data-aos="fade-up" data-aos-duration="800">
-        <h2>Trayectoria Laboral & References</h2>
+        <h2>Trayectoria Laboral & Referencias</h2>
         
         <div class="timeline">
-            <!-- NUEVA EXPERIENCIA: Restaurante Marea -->
+            <!-- EXPERIENCIA: Restaurante Marea -->
             <div class="timeline-node">
                 <p class="node-title">Jefe de Partida / Cocinero</p>
                 <p class="node-meta">Restaurante Marea | Cariño, A Coruña | 2020 - 2023</p>
@@ -606,19 +565,23 @@
                 <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">El Entorno y los Platos de MU.NA</p>
                 <div class="muna-gallery">
                     <div class="gallery-item">
-                        <img src="img/comedor-muna.jpg" alt="Comedor Restaurante MU.NA">
+                        <!-- ENLACE REAL SUMINISTRADO -->
+                        <img src="https://restaurantemuna.com/wp-content/uploads/2024/07/sala-MU.NA-1.jpeg" alt="Comedor Restaurante MU.NA">
                         <div class="gallery-caption">El Comedor</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="img/bodega-muna.jpg" alt="La Bodega de MU.NA">
+                        <!-- ENLACE REAL SUMINISTRADO -->
+                        <img src="https://www.digitaldeleon.com/asset/thumbnail,1280,720,center,center/media/digitaldeleon/images/2025/02/25/20250225124414306001.webp" alt="La Bodega de MU.NA">
                         <div class="gallery-caption">La Bodega</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="img/plato-fusion.jpg" alt="Plato de Autor Fusión Japonesa">
+                        <!-- Temporal: Plato Alta Cocina Fusión -->
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=400" alt="Plato de Autor Fusión Japonesa">
                         <div class="gallery-caption">Fusión Japonesa</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="img/plato-producto.jpg" alt="Producto del Bierzo y Mar">
+                        <!-- Temporal: Plato Marítimo Gourmet -->
+                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&q=80&w=400" alt="Producto del Bierzo y Mar">
                         <div class="gallery-caption">Producto & Mar</div>
                     </div>
                 </div>
@@ -629,7 +592,8 @@
                     
                     <!-- Tarjeta Samuel Naveira -->
                     <div class="ref-card">
-                        <img class="ref-img" src="img/samuel-naveira.jpg" alt="Samuel Naveira - Chef de MU.NA">
+                        <!-- ENLACE REAL SUMINISTRADO -->
+                        <img class="ref-img" src="https://restaurantemuna.com/wp-content/uploads/2025/08/99ea5c5f-be55-4ba3-adbf-77a8eefda80d-1024x683.jpeg" alt="Samuel Naveira - Chef de MU.NA">
                         <div class="ref-info">
                             <div>
                                 <p class="ref-name">Samuel Naveira</p>
@@ -642,7 +606,8 @@
 
                     <!-- Tarjeta Dani Giganto -->
                     <div class="ref-card">
-                        <img class="ref-img" src="img/dani-giganto.jpg" alt="Dani Giganto - Sumiller de MU.NA">
+                        <!-- ENLACE REAL SUMINISTRADO -->
+                        <img class="ref-img" src="https://ponferradahoy.com/wp-content/uploads/2024/05/445517770_18265532296214121_280441537754060970_n-e1716881976217.jpg" alt="Dani Giganto - Sumiller de MU.NA">
                         <div class="ref-info">
                             <div>
                                 <p class="ref-name">Daniel Giganto</p>
@@ -658,7 +623,7 @@
         </div>
     </section>
 
-    <!-- 6. EDUCATION SECTION -->
+    <!-- 5. EDUCATION SECTION -->
     <section class="portfolio-section" id="educacion" data-aos="fade-up" data-aos-duration="800">
         <h2>Educación Académica</h2>
         <div class="edu-block">
@@ -671,7 +636,7 @@
         </div>
     </section>
 
-    <!-- 7. ACTION / CONTACT SECTION -->
+    <!-- 6. ACTION / CONTACT SECTION -->
     <div class="portfolio-section" id="contacto" data-aos="zoom-in" data-aos-duration="800" style="background: none; box-shadow: none; padding: 0;">
         <div class="cta-container">
             <h3>¿Hacemos una prueba en tu cocina?</h3>
