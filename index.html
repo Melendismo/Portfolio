@@ -1,40 +1,481 @@
-n aceite de oliva virgen extra aromatizado a 62°C.</li>
-                            <li>Crujiente de alga nori y aire de codium para potenciar el sabor marino.</li>
-                            <li><strong>Eficiencia:</strong> Control estricto de coste (escandallo al 28%).</li>
-                        </ul>
-                    </div>
 
-                </div>
-            </section>
+Gemini es una IA y puede cometer errores, incluso sobre personas. Tu privacidad y GeminiSe abre en una ventana nueva
 
-            <section class="content-section">
-                <h2>Trayectoria Profesional</h2>
-                <div class="timeline">
-                    
-                    <div class="timeline-item">
-                        <p class="job-title">Chef de Partie (Partida de Calientes)</p>
-                        <p class="job-meta">Restaurante El Olivo (1 Sol Repsol) | 2023 - Presente</p>
-                        <p class="job-desc">Responsable del servicio caliente para una media de 90 comensales por servicio. Supervisión de 2 ayudantes de cocina, control diario de mermas y elaboración de fichas técnicas de producción.</p>
-                    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Mendoza | Portafolio Gastronómico Profesional</title>
+    <!-- AOS Library CSS para animaciones al hacer scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Base Reset & Elegant Palette */
+        :root {
+            --bg-color: #FAF6F0;
+            --primary-color: #8C2D19;
+            --text-color: #2C2C2C;
+            --accent-bg: #F3ECE3;
+            --white: #FFFFFF;
+            --dark-gray: #1A1A1A;
+            --shadow: 0 10px 30px rgba(140, 45, 25, 0.05);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-                    <div class="timeline-item">
-                        <p class="job-title">Cocinero de Primera</p>
-                        <p class="job-meta">Hotel Wellington & Spa 5* | 2020 - 2023</p>
-                        <p class="job-desc">Trabajo en banquetes masivos, eventos y servicio a la carta. Gestión del cuarto frío y apoyo en la línea de pase bajo altos estándares de rapidez y exigencia de un hotel 5 estrellas.</p>
-                    </div>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-                </div>
-            </section>
+        html {
+            scroll-behavior: smooth;
+        }
 
-            <div class="cta-card">
-                <h3>¿Quieres organizar una prueba en tu cocina?</h3>
-                <p>Estoy disponible para realizar una prueba del menú o agendar una entrevista presencial.</p>
-                <a href="mailto:carlos.mendoza.chef@email.com?subject=Propuesta%20de%20Prueba%20de%20Cocina" class="cta-btn">Agendar Prueba Directa</a>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Landing Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(180deg, var(--white) 0%, var(--bg-color) 100%);
+            border-bottom: 4px solid var(--primary-color);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--dark-gray);
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-color);
+            font-weight: bold;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #777;
+            animation: bounce 2s infinite;
+        }
+
+        /* Persistent Navigation Header */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--accent-bg);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .header-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--dark-gray);
+        }
+
+        .contact-minimal {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .contact-minimal a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Linearized Sections Structure */
+        .portfolio-section {
+            max-width: 900px;
+            margin: 100px auto;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition-smooth);
+        }
+
+        .portfolio-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(140, 45, 25, 0.08);
+        }
+
+        h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        /* Section Layout Helpers */
+        .profile-container {
+            font-size: 1.1rem;
+            color: #333;
+            font-style: italic;
+        }
+
+        .specialties-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        @media (min-width: 600px) {
+            .specialties-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .spec-item {
+            padding: 15px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .spec-item:hover {
+            transform: translateX(8px);
+        }
+
+        .spec-item strong {
+            display: block;
+            font-size: 1.05rem;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+            transition: var(--transition-smooth);
+        }
+
+        .spec-item:hover strong {
+            color: var(--primary-color);
+        }
+
+        /* Highlight Cards for Recipes */
+        .dish-card {
+            background-color: var(--accent-bg);
+            border-radius: 6px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: var(--transition-smooth);
+        }
+
+        .dish-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .dish-card:hover {
+            background-color: #ECE3D7;
+            transform: scale(1.01);
+        }
+
+        .dish-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin-bottom: 5px;
+        }
+
+        .dish-tag {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .dish-bullets {
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: #444;
+            margin-top: 10px;
+        }
+
+        .dish-bullets li {
+            margin-bottom: 6px;
+        }
+
+        /* Timeline Pattern */
+        .timeline {
+            border-left: 2px solid var(--accent-bg);
+            padding-left: 25px;
+        }
+
+        .timeline-node {
+            position: relative;
+            margin-bottom: 35px;
+            transition: var(--transition-smooth);
+            padding-left: 5px;
+        }
+
+        .timeline-node:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid var(--white);
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-node:hover::before {
+            background-color: #5d1d10;
+            transform: scale(1.4);
+        }
+
+        .node-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--dark-gray);
+        }
+
+        .node-meta {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        /* Formation Block */
+        .edu-block {
+            margin-bottom: 25px;
+        }
+
+        .edu-block:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Call To Action Block */
+        .cta-container {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .cta-container h3 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        .cta-container p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .cta-link {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 14px 32px;
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+            animation: pulse-slow 2s infinite;
+        }
+
+        .cta-link:hover {
+            background-color: var(--bg-color);
+            transform: scale(1.05);
+        }
+
+        /* Keyframe Animations */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes pulse-slow {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. PRESENTATION / HERO SECTION -->
+    <section class="hero">
+        <h1 data-aos="fade-up" data-aos-duration="1000">Carlos Mendoza</h1>
+        <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">Chef de Partie & Especialista en Cocina Mediterránea</p>
+        <div class="scroll-indicator">Haz scroll para ver el menú ↓</div>
+    </section>
+
+    <!-- Navigation Header Sticky -->
+    <header>
+        <div class="header-container">
+            <span class="header-logo">Carlos Mendoza | Portafolio</span>
+            <div class="contact-minimal">
+                📞 +34 600 000 000 &nbsp;|&nbsp; ✉️ <a href="mailto:carlos.mendoza.chef@email.com">carlos.mendoza.chef@email.com</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. PROFILE SECTION -->
+    <section class="portfolio-section" id="perfil" data-aos="fade-up" data-aos-duration="800">
+        <h2>Perfil Profesional</h2>
+        <div class="profile-container">
+            Cocinero profesional con más de 6 años de experiencia en restaurantes de alta cocina y gran volumen. Especializado en técnicas culinarias modernas, gestión de partidas (calientes y frías), control estricto de mermas y el diseño de menús de temporada que fusionan tradición y vanguardia.
+        </div>
+    </section>
+
+    <!-- 3. SPECIALTIES SECTION -->
+    <section class="portfolio-section" id="especialidades" data-aos="fade-up" data-aos-duration="800">
+        <h2>Especialidades Técnicas</h2>
+        <div class="specialties-grid">
+            <div class="spec-item">
+                <strong>Gestión de Partidas</strong>
+                Salsas, carnes, pescados y cuarto frío bajo alta presión de servicio continuo.
+            </div>
+            <div class="spec-item">
+                <strong>Técnicas Modernas</strong>
+                Cocción exacta a baja temperatura, técnicas de vacío, espumas nitrogenadas y texturizados.
+            </div>
+            <div class="spec-item">
+                <strong>Gestión Operativa</strong>
+                Control exhaustivo de stocks, cálculo de escandallos complejos, normativa APPCC y liderazgo.
+            </div>
+            <div class="spec-item">
+                <strong>Idiomas</strong>
+                Español (nativo) e Inglés funcional (nivel intermedio-B2 orientado a hostelería).
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SIGNATURE DISHES SECTION -->
+    <section class="portfolio-section" id="platos" data-aos="fade-up" data-aos-duration="800">
+        <h2>Propuesta & Platos Destacados</h2>
+        
+        <div class="dish-card">
+            <p class="dish-title">1. Pulpo a Baja Temperatura</p>
+            <p class="dish-tag">Técnica Avanzada & Texturas</p>
+            <p>Un plato insignia que demuestra precisión técnica y respeto absoluto por el producto tradicional:</p>
+            <ul class="dish-bullets">
+                <li>Cocción al vacío controlada a 77°C durante 5 horas completas.</li>
+                <li>Emulsión aterciopelada de patata con aceite de trufa blanca y pimentón puro de la Vera.</li>
+                <li><strong>Logro:</strong> Incrementó la venta directa de entradas en un 20% en mi último puesto.</li>
+            </ul>
+        </div>
+
+        <div class="dish-card">
+            <p class="dish-title">2. Lomo de Bacalao Confitado</p>
+            <p class="dish-tag">Cocina de Autor & Esencia Marina</p>
+            <p>Fusión de técnicas de conservación tradicionales con emplatados modernos, minimalistas y limpios:</p>
+            <ul class="dish-bullets">
+                <li>Confitado milimétrico en aceite de oliva virgen extra aromatizado a 62°C.</li>
+                <li>Crujiente texturizado de alga nori y aire de codium para potenciar el golpe marino.</li>
+                <li><strong>Rendimiento:</strong> Control estricto de desperdicio con un coste de escandallo fijado en el 28%.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 5. EXPERIENCE SECTION -->
+    <section class="portfolio-section" id="experiencia" data-aos="fade-up" data-aos-duration="800">
+        <h2>Trayectoria Laboral</h2>
+        <div class="timeline">
+            
+            <div class="timeline-node">
+                <p class="node-title">Chef de Partie (Partida de Calientes)</p>
+                <p class="node-meta">Restaurante El Olivo (1 Sol Repsol) | 2023 - Presente</p>
+                <p>Responsable directo del servicio caliente para una media de 90 comensales diarios. Dirección de 2 ayudantes, control diario riguroso de mermas y elaboración metódica de fichas de producción.</p>
             </div>
 
-        </main>
+            <div class="timeline-node">
+                <p class="node-title">Cocinero de Primera</p>
+                <p class="node-meta">Hotel Wellington & Spa 5* | 2020 - 2023</p>
+                <p>Despliegue operativo en banquetes masivos, eventos institucionales y servicio a la carta. Gestión integral del cuarto frío y apoyo crítico en pase bajo exigentes estándares de rapidez de un 5 estrellas.</p>
+            </div>
 
+        </div>
+    </section>
+
+    <!-- 6. EDUCATION SECTION -->
+    <section class="portfolio-section" id="educacion" data-aos="fade-up" data-aos-duration="800">
+        <h2>Educación Académica</h2>
+        <div class="edu-block">
+            <p style="font-weight: bold; font-size: 1.1rem; color: var(--dark-gray);">Técnico Superior en Dirección de Cocina</p>
+            <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; color: #666;">Escuela de Hostelería de Madrid | Graduado en 2020</p>
+        </div>
+        <div class="edu-block">
+            <p style="font-weight: bold; font-size: 1.1rem; color: var(--dark-gray);">Curso Avanzado de Cocina al Vacío y Baja Temperatura</p>
+            <p style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; color: #666;">Culinary Institute / Certificación Especializada | 2021</p>
+        </div>
+    </section>
+
+    <!-- 7. ACTION / CONTACT SECTION -->
+    <div class="portfolio-section" id="contacto" data-aos="zoom-in" data-aos-duration="800" style="background: none; box-shadow: none; padding: 0;">
+        <div class="cta-container">
+            <h3>¿Hacemos una prueba en tu cocina?</h3>
+            <p>Estoy listo para agendar una entrevista técnica o diseñar una propuesta de menú presencial.</p>
+            <a href="mailto:carlos.mendoza.chef@email.com?subject=Propuesta%20de%20Prueba%20de%20Cocina" class="cta-link">Agendar Prueba Directa</a>
+        </div>
     </div>
 
+    <!-- AOS Script Initialization para controlar la aparición al hacer scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, /* La animación ocurre solo la primera vez que bajas, para no molestar la lectura */
+            offset: 120 /* El elemento empieza a aparecer 120px antes de entrar en la pantalla */
+        });
+    </script>
 </body>
 </html>
