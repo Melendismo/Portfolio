@@ -804,7 +804,7 @@
         </div>
     </header>
 
-  <!-- 2. PROFILE SECTION -->
+ <!-- 2. PROFILE SECTION -->
     <section class="portfolio-section" id="perfil" data-aos="fade-up" data-aos-duration="800">
         <h2>Matriz de Competencias Profesionales</h2>
         
@@ -843,78 +843,61 @@
         </div>
 
         <style>
-            /* Contenedor con scroll horizontal para pantallas móviles */
+            /* Contenedor que evita que la tabla rompa el diseño en móviles */
             .profile-container {
                 width: 100%;
                 overflow-x: auto;
                 margin-top: 25px;
+                background: #ffffff; /* Asegura el fondo blanco de tu plantilla */
+                border-radius: 8px;
                 -webkit-overflow-scrolling: touch;
             }
 
-            /* Estilos generales de la tabla (Modo Oscuro / Por defecto) */
+            /* Tabla adaptada al tema visual de Alfredo Talín */
             .competencias-table {
                 width: 100%;
                 border-collapse: collapse;
                 text-align: left;
-                font-family: inherit;
-                min-width: 600px;
+                font-family: inherit; /* Utiliza la fuente Inter/Roboto que ya tienes cargada */
+                min-width: 650px;
             }
 
-            /* Cabecera de la tabla */
+            /* Cabecera idéntica a tus títulos de bloque */
             .competencias-table th {
-                background-color: rgba(255, 255, 255, 0.07);
-                color: #ffffff; /* Blanco puro para modo oscuro */
+                background-color: #f8f9fa; /* Gris claro muy sutil para estructurar */
+                color: #1a1a1a; /* El mismo color oscuro de tus h2 y h3 */
                 font-weight: 600;
                 text-transform: uppercase;
                 font-size: 0.85rem;
-                letter-spacing: 1px;
+                letter-spacing: 0.5px;
                 padding: 16px 20px;
-                border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+                border-bottom: 2px solid #e9ecef;
             }
 
-            /* Filas y celdas */
+            /* Celdas con tu color de texto base */
             .competencias-table td {
                 padding: 16px 20px;
                 font-size: 0.95rem;
                 line-height: 1.6;
-                color: rgba(255, 255, 255, 0.85); /* Blanco suave para texto largo */
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                color: #333333; /* Color exacto que usas en los párrafos de tu trayectoria */
+                border-bottom: 1px solid #eeeeee;
                 vertical-align: top;
             }
 
-            /* Resaltado para la primera columna */
+            /* Primera columna ligeramente más destacada en jerarquía */
             .competencias-table td.area-title {
-                color: #ffffff;
-                font-weight: 500;
+                color: #1a1a1a;
+                font-weight: 600;
                 width: 25%;
             }
 
+            /* Efecto hover interactivo al pasar el ratón */
             .competencias-table tbody tr:hover {
-                background-color: rgba(255, 255, 255, 0.02);
+                background-color: #fafafa;
                 transition: background-color 0.2s ease;
-            }
-
-            /* --- MODO CLARO (Fondo Blanco) --- */
-            @media (prefers-color-scheme: light) {
-                .competencias-table th {
-                    background-color: rgba(0, 0, 0, 0.04);
-                    color: #1a1a1a; /* Gris casi negro muy legible */
-                    border-bottom-color: rgba(0, 0, 0, 0.12);
-                }
-                .competencias-table td {
-                    color: #333333; /* Gris oscuro para el cuerpo del texto */
-                    border-bottom-color: rgba(0, 0, 0, 0.08);
-                }
-                .competencias-table td.area-title {
-                    color: #1a1a1a; /* Texto destacado en negro para la primera columna */
-                }
-                .competencias-table tbody tr:hover {
-                    background-color: rgba(0, 0, 0, 0.01);
-                }
             }
         </style>
     </section>
-
     <!-- 3. EXPERIENCE SECTION -->
     <section class="portfolio-section" id="experiencia" data-aos="fade-up" data-aos-duration="800">
         <h2>Trayectoria Laboral & Referencias</h2>
