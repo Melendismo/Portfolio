@@ -442,6 +442,75 @@
             letter-spacing: 0.5px;
         }
 
+        /* --- NUEVO ESTILO: Galería Personal de Platos --- */
+        .personal-gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 576px) {
+            .personal-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .personal-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .dish-card {
+            background-color: var(--accent-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: var(--transition-smooth);
+        }
+
+        .dish-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(140, 45, 25, 0.1);
+        }
+
+        .dish-img-wrapper {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dish-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .dish-card:hover .dish-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .dish-details {
+            padding: 15px 20px;
+        }
+
+        .dish-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin-bottom: 4px;
+        }
+
+        .dish-desc {
+            font-size: 0.85rem;
+            font-family: var(--font-sans);
+            color: var(--text-color);
+            line-height: 1.4;
+            opacity: 0.85;
+        }
+
         /* Formation Block */
         .edu-block {
             margin-bottom: 30px;
@@ -670,22 +739,18 @@
                 <p style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-color); font-weight: 700; margin-bottom: 12px;">El Entorno y el Producto en Marea</p>
                 <div class="muna-gallery">
                     <div class="gallery-item">
-                        <!-- Imagen 1: Sala de Restaurante Marea -->
                         <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlDCZQKSDmmxHI8qrP3BGV3HLhZgu2MD_1O4mOYnlSuLY_uzU-TJ1Pt3kRgrI_toCg1I00lhr_SmG7WoKShryxmcucQLdR4bVXaTr-mbxp0W6cKklpHNuiDslz1KTfb6cFHQg-oDw=s680-w680-h510" alt="Sala de Restaurante Marea">
                         <div class="gallery-caption">La Sala</div>
                     </div>
                     <div class="gallery-item">
-                        <!-- Imagen 2: Producto Local de la Lonja de Cariño -->
                         <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnw90UBeiH7ft2nbA_LjBjEMUYKOq4wq9sts3CKJgYeDSGQ2dLmKxO_34ANKYYtTmbjfBUgJxg2vBL-jO3cWDae0jUuCxdrSws2MjznD7kEibmXSt6yNYtr9rV9wKdxXfLSxR2Z4Q=s680-w680-h510" alt="Pescado fresco de la lonja de Cariño">
                         <div class="gallery-caption">Producto Local</div>
                     </div>
                     <div class="gallery-item">
-                        <!-- Imagen 3: Para compartir / Almejas con pimientos -->
                         <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmWKREie2p7RI15gMD0cUh2Yd2BDVMmxXr99TuH4FRN-ojogwdM2GVDWkt9qIatrvwtrDu_yC2YIWFQ48HmkNyCclmWsxUTAUvaytHEA-FBcEL5AOZB_oP58IzYdRlAm_fJlu9F=s680-w680-h510" alt="Plato marinero para compartir">
                         <div class="gallery-caption">Para compartir</div>
                     </div>
                     <div class="gallery-item">
-                        <!-- Imagen 4: Cocina Marinera / Emplatado con pulpo -->
                         <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkFw3rrAQf0BM62YV_HVGu8D9bleo8QPWEY2_IcUZICL7loQbyWiFtzWzRuJaFH1WhhtjCHTAQq5I1tCn08jMUkouZ6CIeJd-MQGEqgQ2u_7XPqB0mQoKIMWofsKUlVOQ5Gccz2wbZZ52o=s680-w680-h510" alt="Emplatado de cocina marinera contemporánea">
                         <div class="gallery-caption">Cocina Marinera</div>
                     </div>
@@ -741,7 +806,6 @@
                 <!-- Referencias de Líderes -->
                 <p style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-color); font-weight: 700; margin-top: 40px; margin-bottom: 5px;">Aval de Profesionales del Sector</p>
                 <div class="references-grid">
-                     
                     <!-- Tarjeta Samuel Naveira -->
                     <div class="ref-card">
                         <img class="ref-img" src="https://restaurantemuna.com/wp-content/uploads/2025/08/99ea5c5f-be55-4ba3-adbf-77a8eefda80d-1024x683.jpeg" alt="Samuel Naveira - Chef de MU.NA">
@@ -767,7 +831,47 @@
                             <a href="mailto:info@restaurantemuna.com?subject=Referencia%20Profesional%20de%20Alfredo%20Tal%C3%ADn%20(Dani%20Giganto)" class="ref-contact-btn">Solicitar Referencia Directa</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- NUEVA SECCIÓN: GALERÍA PERSONAL DE CREACIONES -->
+    <section class="portfolio-section" id="galeria-personal" data-aos="fade-up" data-aos-duration="800">
+        <h2>Galería Personal de Creaciones</h2>
+        <p style="font-family: var(--font-serif); font-style: italic; margin-bottom: 30px; color: var(--text-color); opacity: 0.8;">Una muestra visual de mi propuesta técnica, emplatados y desarrollo creativo de platos.</p>
+        
+        <div class="personal-gallery-grid">
+            <!-- Plato 1 -->
+            <div class="dish-card">
+                <div class="dish-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80&w=600" alt="Creación Culinaria Alfredo Talín 1">
+                </div>
+                <div class="dish-details">
+                    <p class="dish-title">Texturas e Innovación</p>
+                    <p class="dish-desc">Enfoque centrado en el equilibrio de contrastes, crujientes y emulsiones técnicas.</p>
+                </div>
+            </div>
+
+            <!-- Plato 2 -->
+            <div class="dish-card">
+                <div class="dish-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600" alt="Creación Culinaria Alfredo Talín 2">
+                </div>
+                <div class="dish-details">
+                    <p class="dish-title">Cocina de Producto</p>
+                    <p class="dish-desc">Respeto absoluto al punto de cocción óptimo de las mejores materias primas de temporada.</p>
+                </div>
+            </div>
+
+            <!-- Plato 3 -->
+            <div class="dish-card">
+                <div class="dish-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600" alt="Creación Culinaria Alfredo Talín 3">
+                </div>
+                <div class="dish-details">
+                    <p class="dish-title">Vanguardia y Tradición</p>
+                    <p class="dish-desc">Actualización de bases clásicas y fondos complejos mediante técnicas contemporáneas.</p>
                 </div>
             </div>
         </div>
