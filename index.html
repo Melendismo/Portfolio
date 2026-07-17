@@ -809,100 +809,164 @@
         </div>
     </header>
 
-    <!-- 2. PROFILE SECTION -->
+    <!-- 2. PROFILE SECTION (REDISEÑADO SIN TABLAS RIGIDAS) -->
     <section class="portfolio-section" id="perfil" data-aos="fade-up" data-aos-duration="800">
         <h2>Matriz de Competencias Profesionales</h2>
+        <p style="font-family: var(--font-serif); font-style: italic; margin-bottom: 35px; color: var(--text-color); opacity: 0.8;">Habilidades estratégicas y operativas aplicadas a la alta gastronomía.</p>
         
-        <div class="profile-container">
-            <table class="competencias-table">
-                <thead>
-                    <tr>
-                        <th>Área Clave</th>
-                        <th>Competencias y Destrezas</th>
-                        <th>Impacto en el Servicio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="area-title"><strong>Alta Cocina & Técnica</strong></td>
-                        <td>Técnica de precisión, desarrollo de menús evolutivos, respeto absoluto por el producto de proximidad y estacionalidad.</td>
-                        <td>Estándares de excelencia Michelin y experiencias gastronómicas memorables.</td>
-                    </tr>
-                    <tr>
-                        <td class="area-title"><strong>Gestión Operativa</strong></td>
-                        <td>Control de escandallos, ingeniería de menú, gestión de mermas y optimización de recursos.</td>
-                        <td>Garantía de rentabilidad financiera y eficiencia en cada servicio.</td>
-                    </tr>
-                    <tr>
-                        <td class="area-title"><strong>Liderazgo de Equipos</strong></td>
-                        <td>Dirección de brigadas bajo entornos de alta presión, formación de personal y organización de turnos (más de 6 años al frente).</td>
-                        <td>Clima laboral eficiente, consistencia en los platos y reducción de la rotación.</td>
-                    </tr>
-                    <tr>
-                        <td class="area-title"><strong>Calidad y Seguridad</strong></td>
-                        <td>Implementación de normativas APPCC / HACCP, control estricto de trazabilidad y auditorías higiénico-sanitarias.</td>
-                        <td>Garantía de seguridad alimentaria y cumplimiento riguroso de la ley.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="competencias-grid">
+            <!-- Tarjeta 1 -->
+            <div class="comp-card">
+                <div class="comp-header">
+                    <span class="comp-icon">🍳</span>
+                    <h3 class="comp-title">Alta Cocina & Técnica</h3>
+                </div>
+                <div class="comp-body">
+                    <p class="comp-desc">Técnica de precisión, desarrollo de menús evolutivos, respeto absoluto por el producto de proximidad y estacionalidad.</p>
+                    <div class="comp-impact">
+                        <span class="impact-badge">Impacto</span>
+                        <p>Estándares de excelencia Michelin y experiencias gastronómicas memorables.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="comp-card">
+                <div class="comp-header">
+                    <span class="comp-icon">📊</span>
+                    <h3 class="comp-title">Gestión Operativa</h3>
+                </div>
+                <div class="comp-body">
+                    <p class="comp-desc">Control de escandallos, ingeniería de menú, gestión de mermas y optimización de recursos.</p>
+                    <div class="comp-impact">
+                        <span class="impact-badge">Impacto</span>
+                        <p>Garantía de rentabilidad financiera y eficiencia en cada servicio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="comp-card">
+                <div class="comp-header">
+                    <span class="comp-icon">👥</span>
+                    <h3 class="comp-title">Liderazgo de Equipos</h3>
+                </div>
+                <div class="comp-body">
+                    <p class="comp-desc">Dirección de brigadas bajo entornos de alta presión, formación de personal y organización de turnos (más de 6 años al frente).</p>
+                    <div class="comp-impact">
+                        <span class="impact-badge">Impacto</span>
+                        <p>Clima laboral eficiente, consistencia en los platos y reducción de la rotación.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4 -->
+            <div class="comp-card">
+                <div class="comp-header">
+                    <span class="comp-icon">🛡️</span>
+                    <h3 class="comp-title">Calidad y Seguridad</h3>
+                </div>
+                <div class="comp-body">
+                    <p class="comp-desc">Implementación de normativas APPCC / HACCP, control estricto de trazabilidad y auditorías higiénico-sanitarias.</p>
+                    <div class="comp-impact">
+                        <span class="impact-badge">Impacto</span>
+                        <p>Garantía de seguridad alimentaria y cumplimiento riguroso de la ley.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <style>
-            /* Contenedor que evita que la tabla rompa el diseño en móviles */
-            .profile-container {
-                width: 100%;
-                overflow-x: auto;
-                margin-top: 25px;
-                background: transparent;
-                border-radius: 8px;
-                -webkit-overflow-scrolling: touch;
+            /* Nuevos Estilos para la Matriz de Competencias */
+            .competencias-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 25px;
             }
 
-            /* Tabla adaptada exactamente a la tipografía de tu trayectoria */
-            .competencias-table {
-                width: 100%;
-                border-collapse: collapse;
-                text-align: left;
-                min-width: 650px;
+            @media (min-width: 768px) {
+                .competencias-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
             }
 
-            /* Cabecera adaptada */
-            .competencias-table th {
+            .comp-card {
                 background-color: var(--accent-bg);
+                border-radius: var(--border-radius);
+                padding: 25px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+                transition: var(--transition-smooth);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border: 1px solid rgba(140, 45, 25, 0.03);
+            }
+
+            .comp-card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 30px rgba(140, 45, 25, 0.08);
+                background-color: var(--white);
+            }
+
+            .comp-header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 15px;
+            }
+
+            .comp-icon {
+                font-size: 1.5rem;
+            }
+
+            .comp-title {
+                font-family: var(--font-sans);
+                font-size: 1.15rem;
+                font-weight: 700;
                 color: var(--dark-gray);
-                font-weight: 600;
-                text-transform: uppercase;
+            }
+
+            .comp-desc {
+                font-family: var(--font-sans);
+                font-size: 0.95rem;
+                color: var(--text-color);
+                line-height: 1.6;
+                margin-bottom: 20px;
+                opacity: 0.9;
+            }
+
+            .comp-impact {
+                background-color: rgba(140, 45, 25, 0.05);
+                padding: 12px 15px;
+                border-radius: 8px;
+                border-left: 3px solid var(--primary-color);
+            }
+
+            .comp-impact p {
+                font-family: var(--font-sans);
                 font-size: 0.85rem;
-                letter-spacing: 0.5px;
-                padding: 16px 20px;
-                border-bottom: 2px solid rgba(0,0,0,0.05);
+                color: var(--text-color);
+                line-height: 1.5;
+                font-style: italic;
             }
 
-            /* Celdas con los estilos idénticos al de los textos del portafolio */
-            .competencias-table td {
-                padding: 16px 20px;
-                font-size: 0.95rem; 
-                line-height: 1.6; 
-                color: var(--text-color); 
-                border-bottom: 1px solid rgba(0,0,0,0.05);
-                vertical-align: top;
+            .impact-badge {
+                display: inline-block;
+                font-family: var(--font-sans);
+                font-size: 0.7rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: 700;
+                color: var(--primary-color);
+                margin-bottom: 4px;
             }
-
-            /* Primera columna alineada con la estética de tus cargos */
-            .competencias-table td.area-title {
-                color: var(--dark-gray);
-                font-weight: 600;
-                width: 25%;
-            }
-
-            /* Efecto hover interactivo */
-            .competencias-table tbody tr:hover {
-                background-color: rgba(140, 45, 25, 0.02);
-                transition: background-color 0.2s ease;
+            
+            /* Ajuste para el modo oscuro */
+            [data-theme="dark"] .comp-impact {
+                background-color: rgba(212, 93, 67, 0.1);
             }
         </style>
     </section>
-
     <!-- 3. EXPERIENCE SECTION -->
     <section class="portfolio-section" id="experiencia" data-aos="fade-up" data-aos-duration="800">
         <h2>Trayectoria Laboral & Referencias</h2>
