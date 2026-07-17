@@ -670,19 +670,23 @@
                 <p style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-color); font-weight: 700; margin-bottom: 12px;">El Entorno y el Producto en Marea</p>
                 <div class="muna-gallery">
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=400" alt="Sala de Restaurante Marea">
+                        <!-- Imagen 1: Sala de Restaurante Marea -->
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlDCZQKSDmmxHI8qrP3BGV3HLhZgu2MD_1O4mOYnlSuLY_uzU-TJ1Pt3kRgrI_toCg1I00lhr_SmG7WoKShryxmcucQLdR4bVXaTr-mbxp0W6cKklpHNuiDslz1KTfb6cFHQg-oDw=s680-w680-h510" alt="Sala de Restaurante Marea">
                         <div class="gallery-caption">La Sala</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?auto=format&fit=crop&q=80&w=400" alt="Pescado de la lonja de Cariño">
+                        <!-- Imagen 2: Producto Local de la Lonja de Cariño -->
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnw90UBeiH7ft2nbA_LjBjEMUYKOq4wq9sts3CKJgYeDSGQ2dLmKxO_34ANKYYtTmbjfBUgJxg2vBL-jO3cWDae0jUuCxdrSws2MjznD7kEibmXSt6yNYtr9rV9wKdxXfLSxR2Z4Q=s680-w680-h510" alt="Pescado fresco de la lonja de Cariño">
                         <div class="gallery-caption">Producto Local</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1534080391025-4979e8314470?auto=format&fit=crop&q=80&w=400" alt="Marisco Fresco Gallego">
+                        <!-- Imagen 3: Para compartir / Almejas con pimientos -->
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmWKREie2p7RI15gMD0cUh2Yd2BDVMmxXr99TuH4FRN-ojogwdM2GVDWkt9qIatrvwtrDu_yC2YIWFQ48HmkNyCclmWsxUTAUvaytHEA-FBcEL5AOZB_oP58IzYdRlAm_fJlu9F=s680-w680-h510" alt="Plato marinero para compartir">
                         <div class="gallery-caption">Para compartir</div>
                     </div>
                     <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&q=80&w=400" alt="Emplatado Marinero en Marea">
+                        <!-- Imagen 4: Cocina Marinera / Emplatado con pulpo -->
+                        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkFw3rrAQf0BM62YV_HVGu8D9bleo8QPWEY2_IcUZICL7loQbyWiFtzWzRuJaFH1WhhtjCHTAQq5I1tCn08jMUkouZ6CIeJd-MQGEqgQ2u_7XPqB0mQoKIMWofsKUlVOQ5Gccz2wbZZ52o=s680-w680-h510" alt="Emplatado de cocina marinera contemporánea">
                         <div class="gallery-caption">Cocina Marinera</div>
                     </div>
                 </div>
@@ -692,7 +696,8 @@
             <div class="timeline-node">
                 <p class="node-title">Jefe de Cocina</p>
                 <p class="node-meta">Restaurante MU.NA (1 Estrella Michelin & 1 Sol Repsol) | Ponferrada | 2023 2024 2025</p>
-                <p style="margin-bottom: 20px;">Coordinación y supervisión global del servicio junto a Samuel Naveira. Diseño y ejecución del menú degustación, fusionando producto local de temporada del Bierzo con técnicas de vanguardia y cocina de autor japonesa. Gestión del equipo de cocina, control estricto de APPCC, escandallos y mconsistencia gastronómica.
+                <p style="margin-bottom: 20px;">Coordinación y supervisión global del servicio junto a Samuel Naveira. Diseño y ejecución del menú degustación, fusionando producto local de temporada del Bierzo con técnicas de vanguardia y cocina de autor japonesa. Gestión del equipo de cocina, control estricto de APPCC, escandallos y consistencia gastronómica.</p>
+                
                 <!-- Galería de MU.NA -->
                 <p style="font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary-color); font-weight: 700; margin-bottom: 12px;">El Entorno y los Pases de MU.NA</p>
                 <div class="muna-gallery">
@@ -835,34 +840,6 @@
             } else {
                 showFormBtn.textContent = 'Formulario de Contacto';
             }
-        });
-
-        // 4. Form Submit Action
-        const form = document.getElementById('gastronomyForm');
-        const feedback = document.getElementById('formFeedback');
-        const submitBtn = document.getElementById('submitBtn');
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nameValue = document.getElementById('name').value;
-            const emailValue = document.getElementById('email').value;
-            const messageValue = document.getElementById('message').value;
-
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-
-            setTimeout(() => {
-                feedback.style.display = 'block';
-                submitBtn.textContent = 'Propuesta Enviada';
-                
-                // Redirigir de fondo abriendo la app de correo con los datos limpios
-                const mailtoLink = `mailto:alfrepei@gmail.com?subject=Propuesta de ${encodeURIComponent(nameValue)}&body=Contacto: ${encodeURIComponent(emailValue)}%0D%0A%0D%0AMensaje: ${encodeURIComponent(messageValue)}`;
-                
-                window.location.href = mailtoLink;
-                
-                form.reset();
-            }, 1200);
         });
     </script>
 </body>
