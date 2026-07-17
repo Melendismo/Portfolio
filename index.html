@@ -1,18 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-    <style>
-        /* Unificar la fuente de la tabla con el resto del portafolio */
-        table, th, td {
-            font-family: inherit;
-            font-size: 0.95rem;
-            color: #1a1a1a;
-        }
-        th {
-            font-weight: 600;
-            letter-spacing: -0.01em;
-        }
-    </style>
-</head>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,6 +69,11 @@
             line-height: 1.7;
             overflow-x: hidden;
             transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Fuerza la tipografía en la tabla y sus elementos hijos */
+        table, table *, th, td {
+            font-family: var(--font-sans) !important;
         }
 
         /* Floating Theme Switcher */
@@ -817,7 +809,7 @@
         </div>
     </header>
 
-<!-- 2. PROFILE SECTION -->
+    <!-- 2. PROFILE SECTION -->
     <section class="portfolio-section" id="perfil" data-aos="fade-up" data-aos-duration="800">
         <h2>Matriz de Competencias Profesionales</h2>
         
@@ -861,7 +853,7 @@
                 width: 100%;
                 overflow-x: auto;
                 margin-top: 25px;
-                background: #ffffff;
+                background: transparent;
                 border-radius: 8px;
                 -webkit-overflow-scrolling: touch;
             }
@@ -871,47 +863,46 @@
                 width: 100%;
                 border-collapse: collapse;
                 text-align: left;
-                font-family: var(--font-sans); /* Tipografía idéntica del sistema */
                 min-width: 650px;
             }
 
             /* Cabecera adaptada */
             .competencias-table th {
-                background-color: #f8f9fa;
-                color: #1a1a1a;
-                font-family: var(--font-sans);
+                background-color: var(--accent-bg);
+                color: var(--dark-gray);
                 font-weight: 600;
                 text-transform: uppercase;
                 font-size: 0.85rem;
                 letter-spacing: 0.5px;
                 padding: 16px 20px;
-                border-bottom: 2px solid #e9ecef;
+                border-bottom: 2px solid rgba(0,0,0,0.05);
             }
 
-            /* Celdas con los estilos idénticos al párrafo de Marea */
+            /* Celdas con los estilos idénticos al de los textos del portafolio */
             .competencias-table td {
                 padding: 16px 20px;
-                font-size: 1rem; /* Mismo tamaño que tus párrafos de texto laboral */
-                line-height: 1.6; /* Mismo interlineado que hace que se lea limpio */
-                color: #333333; /* Mismo color de fuente gris oscuro */
-                border-bottom: 1px solid #eeeeee;
+                font-size: 0.95rem; 
+                line-height: 1.6; 
+                color: var(--text-color); 
+                border-bottom: 1px solid rgba(0,0,0,0.05);
                 vertical-align: top;
             }
 
             /* Primera columna alineada con la estética de tus cargos */
             .competencias-table td.area-title {
-                color: #1a1a1a;
+                color: var(--dark-gray);
                 font-weight: 600;
                 width: 25%;
             }
 
             /* Efecto hover interactivo */
             .competencias-table tbody tr:hover {
-                background-color: #fafafa;
+                background-color: rgba(140, 45, 25, 0.02);
                 transition: background-color 0.2s ease;
             }
         </style>
     </section>
+
     <!-- 3. EXPERIENCE SECTION -->
     <section class="portfolio-section" id="experiencia" data-aos="fade-up" data-aos-duration="800">
         <h2>Trayectoria Laboral & Referencias</h2>
@@ -959,7 +950,7 @@
                         <!-- Sub-negocio 1: CO·DŌ -->
                         <div style="background-color: var(--white); padding: 15px; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
                             <p style="font-weight: 700; font-size: 1.05rem; color: var(--dark-gray); margin-bottom: 2px;">CO·DŌ <span style="font-size: 0.8rem; font-weight: 400; color: #888;">| Concepto Casual & Brasas</span></p>
-                            <p style="font-size: 0.9rem; color: var(--text-color); line-height: 1.5;">Apoyo técnico y supervisión en el diseño de platos informales de base internacional y brasa. Control de estandarización de recetas canallas para garantizar la regularidad y el dinamismo en el servicio de alto volumen de este local del grupo.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-color); line-height: 1.5;">Apoyo técnico y supervisión en el diseño de platos informales de base internacional y brasa. Control de estandarización de recetas canallas para garantizar la regularidad y el dynamism en el servicio de alto volumen de este local del grupo.</p>
                         </div>
                         
                         <!-- Sub-negocio 2: CO·CO -->
