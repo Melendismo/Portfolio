@@ -804,12 +804,116 @@
         </div>
     </header>
 
-    <!-- 2. PROFILE SECTION -->
+  <!-- 2. PROFILE SECTION -->
     <section class="portfolio-section" id="perfil" data-aos="fade-up" data-aos-duration="800">
-        <h2>Propuesta de Valor & Visión</h2>
+        <h2>Matriz de Competencias Profesionales</h2>
+        
         <div class="profile-container">
-            "Entiendo la cocina como un equilibrio perfecto entre la técnica de precisión, el respeto absoluto por la estacionalidad del producto y una rigurosa gestión operativa. Con más de 6 años al frente de fuegos de alta exigencia, mi objetivo es transformar la materia prima en experiencias memorables, liderando equipos bajo estándares de excelencia Michelin y optimizando recursos para asegurar la rentabilidad de cada servicio."
+            <table class="competencias-table">
+                <thead>
+                    <tr>
+                        <th>Área Clave</th>
+                        <th>Competencias y Destrezas</th>
+                        <th>Impacto en el Servicio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="area-title"><strong>Alta Cocina & Técnica</strong></td>
+                        <td>Técnica de precisión, desarrollo de menús evolutivos, respeto absoluto por el producto de proximidad y estacionalidad.</td>
+                        <td>Estándares de excelencia Michelin y experiencias gastronómicas memorables.</td>
+                    </tr>
+                    <tr>
+                        <td class="area-title"><strong>Gestión Operativa</strong></td>
+                        <td>Control de escandallos, ingeniería de menú, gestión de mermas y optimización de recursos.</td>
+                        <td>Garantía de rentabilidad financiera y eficiencia en cada servicio.</td>
+                    </tr>
+                    <tr>
+                        <td class="area-title"><strong>Liderazgo de Equipos</strong></td>
+                        <td>Dirección de brigadas bajo entornos de alta presión, formación de personal y organización de turnos (más de 6 años al frente).</td>
+                        <td>Clima laboral eficiente, consistencia en los platos y reducción de la rotación.</td>
+                    </tr>
+                    <tr>
+                        <td class="area-title"><strong>Calidad y Seguridad</strong></td>
+                        <td>Implementación de normativas APPCC / HACCP, control estricto de trazabilidad y auditorías higiénico-sanitarias.</td>
+                        <td>Garantía de seguridad alimentaria y cumplimiento riguroso de la ley.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+
+        <style>
+            /* Contenedor con scroll horizontal para pantallas móviles */
+            .profile-container {
+                width: 100%;
+                overflow-x: auto;
+                margin-top: 25px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Estilos generales de la tabla */
+            .competencias-table {
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+                font-family: inherit; /* Hereda la tipografía de tu portafolio */
+                min-width: 600px; /* Evita que las columnas se compriman demasiado en móvil */
+            }
+
+            /* Cabecera de la tabla */
+            .competencias-table th {
+                background-color: rgba(255, 255, 255, 0.05); /* Fondo sutil translúcido */
+                color: #ffffff; /* Ajusta según tu paleta, blanco suele resaltar bien */
+                font-weight: 600;
+                text-transform: uppercase;
+                font-size: 0.85rem;
+                letter-spacing: 1px;
+                padding: 16px 20px;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+            }
+
+            /* Filas y celdas */
+            .competencias-table td {
+                padding: 16px 20px;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.85); /* Texto ligeramente suave */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                vertical-align: top;
+            }
+
+            /* Resaltado para la primera columna */
+            .competencias-table td.area-title {
+                color: #ffffff;
+                font-weight: 500;
+                width: 25%; /* Ancho controlado para la columna de áreas */
+            }
+
+            /* Efecto hover suave al pasar el cursor por las filas */
+            .competencias-table tbody tr:hover {
+                background-color: rgba(255, 255, 255, 0.02);
+                transition: background-color 0.2s ease;
+            }
+
+            /* Ajustes para entornos con fondos muy claros (opcional) */
+            @media (prefers-color-scheme: light) {
+                .competencias-table th {
+                    background-color: rgba(0, 0, 0, 0.03);
+                    color: #1a1a1a;
+                    border-bottom-color: rgba(0, 0, 0, 0.1);
+                }
+                .competencias-table td {
+                    color: #4a4a4a;
+                    border-bottom-color: rgba(0, 0, 0, 0.06);
+                }
+                .competencias-table td.area-title {
+                    color: #1a1a1a;
+                }
+                .competencias-table tbody tr:hover {
+                    background-color: rgba(0, 0, 0, 0.01);
+                }
+            }
+        </style>
     </section>
 
     <!-- 3. EXPERIENCE SECTION -->
